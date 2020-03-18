@@ -1,0 +1,14 @@
+[Unit]
+Description=simple brook start service
+After=network.target
+
+[Service]
+Type=simple
+User=<root or other username>
+WorkingDirectory=<dir to store tmp or log file, eg: /root/Downloads>
+ExecStart=</root/Downloads/brook server -l <your port, eg: :1000> -p <your password>>
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target
